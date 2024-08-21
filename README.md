@@ -3,27 +3,27 @@
 
 This library allows you to import a .olk15RecentAddresses file and get back CSV of
 
-email_address, name
+email_address, FirstName, LastName
 
 ## Install
 
-Use python 2.7
-
-python setup.py install
-
-
+Use Python3. This code has been developed and tested using Python 3.12.0. No installation is necessary beyong having Python3 installed in your computer. Simply run the code from the command line as detailed in the next section.
 
 ## Command line
 
-You can use main.py to input a file and get back the addresses.
-
-Example (for a file located in sample_data/328B48E0-D455-45E3-868A-9506B8004644.olk15RecentAddresses)
+Run `main.py` to input a file and get back the addresses, for example
 
 ```
-python main.py -i sample_data/328B48E0-D455-45E3-868A-9506B8004644.olk15RecentAddresses
+python main.py sample_data/sample.olk15RecentAddresses
 ```
 
+## olk15RecentAddresses files
 
+These files are generated and managed by Outlook 15, and are found in the following folder in a MacOS computer:
+
+```
+/Users/`whoami`/Library/Group Containers/UBF8T346G9.Office/Outlook/Outlook 15 Profiles/Main Profile/Data/Recent Addresses/
+```
 
 
 
