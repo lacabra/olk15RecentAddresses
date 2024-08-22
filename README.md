@@ -27,5 +27,11 @@ These files are generated and managed by Outlook 15, and are found in the follow
 
 
 
+## ✅ Tests
 
+Unit tests are implemented using the built-in module `unittest` following the constraint of not using any external modules that would require installation. Unit tests are found in the usual `test/` folder and can be run with the following command:
+
+```bash
+python -m unittest discover -s tests
+```
 
