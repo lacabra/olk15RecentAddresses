@@ -8,5 +8,7 @@ parser = argparse.ArgumentParser(
 parser.add_argument("filename", type=str, help="Path to the olk15RecentAddresses file.")
 args = parser.parse_args()
 parser = Parser(args.filename)
-emails = parser.go()
-print("\n".join(emails))
+contacts = parser.go()
+
+for contact in contacts:
+    print(", ".join(contact))
