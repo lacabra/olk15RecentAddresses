@@ -35,3 +35,11 @@ Unit tests are implemented using the built-in module `unittest` following the co
 python -m unittest discover -s tests
 ```
 
+## 📝 License
+
+The software contained in this repository is licensed under the [MIT License](LICENSE). Basically, the software is provided "as is", without warranty of any kind; and you can do whatever you want as long as you include the original copyright and license notice in any copy of the software/source.
+
+## 🙏 Acknowledgements
+
+Thanks to [The Slate Group](https://github.com/slategroup) who authored the [original repository](https://github.com/slategroup/olk15RecentAddresses) from which this one has been forked: it included the original Python 2.7 code, but was only able to extract emails. Thanks also to GitHub user [John E Jones IV](https://github.com/johnjones4) who submitted a [pull request](https://github.com/slategroup/olk15RecentAddresses/pull/4) to the original repository proposing code changes to upgrade to Python 3, that were not merged there for several years, but that inspired some code changes to this repository.
+
