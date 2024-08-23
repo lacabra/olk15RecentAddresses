@@ -1,6 +1,7 @@
 import binascii
 import struct
 import itertools
+import logging
 
 
 # thx: http://stackoverflow.com/questions/22901285/taking-a-hex-file-and-extracting-data
@@ -11,7 +12,12 @@ class Parser(object):
     end_of_email = None
 
     def __init__(self, filename, debug=False):
-        self.debug = debug
+        if debug:
+            logging.basicConfig(level=logging.DEBUG)
+        else:
+            logging.basicConfig(level=logging.INFO)
+
+        self.logger = logging.getLogger(self.__class__.__name__)
         self.filename = filename
         self.start_of_email_index = 66  # 66th byte is the 132 character
 
@@ -33,6 +39,8 @@ class Parser(object):
                 continue
             if subsection_start == 0 and byte == "00" and hex_list[i + 1] == "00":
                 subsection_start = i + 2  # This is where the subsection begins
+
+        self.logger.debug(f"Subsection start: {subsection_start}")
 
         # The subsection start must be an even number, multiple of 2
         # if it's an odd number, we are one byte short, so we add one more
@@ -81,14 +89,13 @@ class Parser(object):
         # to self.end_of_email
         section_hex = []
         for i, index in enumerate(section_indices):
-            if self.debug:
-                print(i, index)
+            self.logger.debug(f"{i} {index}")
             if i == len(section_indices) - 1:
                 break
             section_hex.append(hex_list[index : section_indices[i + 1]])
 
         contents = [
-            binascii.unhexlify("".join(item))  # .decode("utf-8").replace("\x00", "")
+            binascii.unhexlify("".join(item)).decode("utf-8").replace("\x00", "")
             for item in section_hex
         ]
 
@@ -107,12 +114,15 @@ class Parser(object):
             email_indices, start_next_section = self.find_section_boundaries(
                 hex_list, self.start_of_email_index
             )
+            self.logger.debug(f"{email_indices} {start_next_section}")
             firstname_indices, start_next_section = self.find_section_boundaries(
                 hex_list, start_next_section
             )
+            self.logger.debug(f"{firstname_indices} {start_next_section}")
             lastname_indices, start_next_section = self.find_section_boundaries(
                 hex_list, start_next_section
             )
+            self.logger.debug(f"{lastname_indices} {start_next_section}")
 
             # Decode each section
             emails = self.decode_section(hex_list, email_indices)
