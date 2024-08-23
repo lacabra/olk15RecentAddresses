@@ -10,5 +10,6 @@ args = parser.parse_args()
 parser = Parser(args.filename)
 contacts = parser.go()
 
+# Output contacts as a comma-separated value (CSV), adjust as needed for other formats
 for contact in contacts:
     print(", ".join(contact))

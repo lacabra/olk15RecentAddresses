@@ -1,31 +1,29 @@
 # Outlook for OSX 2015 Recent Address Parser
 
 
-This library allows you to import a .olk15RecentAddresses file and get back CSV of
+This library allows you to import an **.olk15RecentAddresses** file and get back a CSV (comma-separated value) of
 
-email_address, FirstName, LastName
+Email Address, First Name, LastName
 
-## Install
+## 🛠 Install
 
-Use Python3. This code has been developed and tested using Python 3.12.0. No installation is necessary beyong having Python3 installed in your computer. Simply run the code from the command line as detailed in the next section.
+Use **Python 3**. This code has been developed and tested using Python 3.12.0. No installation is necessary beyond having Python 3 installed in your computer. Simply run the code from the command line as detailed in the next section.
 
-## Command line
+## 💻 Command line
 
-Run `main.py` to input a file and get back the addresses, for example
+Run `main.py` to input a file and get back the contacts information, for example
 
 ```
-python main.py sample_data/sample.olk15RecentAddresses
+python main.py sample_data/sample2.olk15RecentAddresses
 ```
 
-## olk15RecentAddresses files
+## 🔎 olk15RecentAddresses files
 
 These files are generated and managed by Outlook 15, and are found in the following folder in a MacOS computer:
 
 ```
 /Users/`whoami`/Library/Group Containers/UBF8T346G9.Office/Outlook/Outlook 15 Profiles/Main Profile/Data/Recent Addresses/
 ```
-
-
 
 ## ✅ Tests
 
