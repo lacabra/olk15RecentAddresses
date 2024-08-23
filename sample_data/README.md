@@ -2,7 +2,7 @@
 
 This folder contains sample `.olk15RecentAddresses` files to be used for testing purposes. These files **do not contain any personal information** and have been generated for this very specific purpose.
 
-## sample.olk15RecentAddresses
+## sample2.olk15RecentAddresses
 
 This file contains just 2 email addresses with their associated first names and last names:
 
@@ -29,5 +29,17 @@ EAE20000 00000000 00000000 00000100 00000000 000000CB | êâ                    
 FD020000 00000000 00000692 EAE20000 00000000 00000200 | ý           êâ          
 00000154 15030100 00000000 00000000 00000392 EAE20000 |    T                êâ  
 00000000 00000200 00000000 00000000 0000B901 0000     |                   ¹   
+```
+
+## sample3.olkRecentAddresses
+
+This file contains 3 email addresses with their associated first names and last names:
+
+```
+Email                        | First Name    | Last Name  |
+-----------------------------|---------------|------------|
+john.smith@example.com       | John          | Smith      |
+alice.chan@example.com       | Alice         | Chan       |
+mailer-daemon@googlemail.com | Mail Delivery | Subsystem  |
 ```
 
