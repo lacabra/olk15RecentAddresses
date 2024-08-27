@@ -11,10 +11,17 @@ Use **Python 3**. This code has been developed and tested using Python 3.12.0. N
 
 ## 💻 Command line
 
-Run `main.py` to input a file and get back the contacts information, for example
+Run `main.py` to input a file and get back the contacts information, for example:
 
-```
+```bash
 python main.py sample_data/sample2.olk15RecentAddresses
+```
+
+ouptuts:
+
+```bash
+john.smith@example.com, John, Smith
+mailer-daemon@googlemail.com, Mail Delivery, Subsystem
 ```
 
 ## 🔎 olk15RecentAddresses files
@@ -24,6 +31,8 @@ These files are generated and managed by Outlook 15, and are found in the follow
 ```
 /Users/`whoami`/Library/Group Containers/UBF8T346G9.Office/Outlook/Outlook 15 Profiles/Main Profile/Data/Recent Addresses/
 ```
+
+The file structure for these files is thoroughly explained in the [accompanying documentation](olk15RecentAddresses.md).
 
 ## ✅ Tests
 
